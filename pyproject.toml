@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codecarbon"
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "arrow",
+    "click",
+    "fief-client[cli]",
+    "pandas",
+    "prometheus_client",
+    "psutil >= 6.0.0",
+    "py-cpuinfo",
+    "pydantic",
+    "pynvml",
+    "rapidfuzz",
+    "requests",
+    "questionary",
+    "rich",
+    "typer"
+]
+
+[project.scripts]
+carbonboard = "codecarbon.viz.carbonboard:main"
+codecarbon = "codecarbon.cli.main:main"
